@@ -3,8 +3,8 @@ name: AutoGluon Triton 'Bug'
 on:
   push:
     branches:
-      - master
-  pull_request:
+      - main
+  workflow_dispatch:
 
 
 jobs:

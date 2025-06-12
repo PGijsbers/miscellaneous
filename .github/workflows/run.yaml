@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      time:
+        default: 120
+      task:
+        default: 363580
 
 
 jobs:
@@ -29,4 +34,4 @@ jobs:
       - name: Run
         run: |
           source venv/bin/activate
-          python run_autogluon.py
+          python run_autogluon.py ${{ inputs.time }} ${{ inputs.task }}

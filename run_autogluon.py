@@ -14,7 +14,7 @@ data, *_ = dataset.get_data()
 
 print("Training AutoGluon")
 ag_data = TabularDataset(data)
-predictor = TabularPredictor(label='Class').fit(train_data=ag_data, time_limit=int(time))
+predictor = TabularPredictor(label='Class', verbosity=4).fit(train_data=ag_data, time_limit=int(time))
 
 print("Training finished successfully")
 predictions = predictor.predict(data)

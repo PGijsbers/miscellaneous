@@ -18,12 +18,11 @@ test_data = TabularDataset(data.iloc[test_ind,:])
 
 print("Training AutoGluon")
 predictor = TabularPredictor(
-    label='Class', verbosity=4
+    label='Class', verbosity=4, eval_metric='log_loss',
 ).fit(
     train_data=train_data,
-    test_data=test_data,
     time_limit=int(time)
 )
 
 print("Training finished successfully")
-predictions = predictor.predict(data)
+predictions = predictor.predict(test_data)

@@ -2,7 +2,10 @@ from autogluon.tabular import TabularDataset, TabularPredictor
 import openml
 import sys
 
-_, time, task = sys.argv
+if len(sys.argv) == 3:
+    _, time, task = sys.argv
+else:
+    time, task = 60, 363580
 
 print("Downloading OpenML task")
 task = openml.tasks.get_task(int(task))

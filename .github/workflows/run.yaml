@@ -30,6 +30,7 @@ jobs:
           source venv/bin/activate
           python -m pip install uv
           uv pip install autogluon openml
+          uv pip install "autogluon.tabular[all,skex]" 
           uv pip list
       - name: Run
         run: |

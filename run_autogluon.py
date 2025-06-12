@@ -5,7 +5,7 @@ import sys
 if len(sys.argv) == 3:
     _, time, task = sys.argv
 else:
-time, task = 60, 363580
+    time, task = 60, 363580
 
 print("Downloading OpenML task")
 task = openml.tasks.get_task(int(task))
